@@ -1,0 +1,156 @@
+html{
+    font-family: 'Oswald';
+    font-weight: 700;
+    color: #FFF;
+}
+body{
+    background-color: #050729;
+    background-image: url('../img/bg.png');
+}
+
+.wrapper{
+    display: flex;
+}
+
+.menu{
+    @include fluid(width, 270px, 385px);
+    @include fluid(padding-bottom, 50px, 105px);
+    background-color: rgba(11, 11, 13, 0.5);
+    flex-shrink: 0;
+    // padding-right: 150px;
+    &__block{
+        @include fluid(gap, 80px, 165px);
+        display: flex;
+        flex-direction: column;
+        &-logo{
+            @include fluid(font-size, 28px, 30px);
+            // margin-bottom: 166px;
+            color: #FFF;
+            text-align: center;
+            span{
+                color: #A276FF;
+            }
+        }
+        nav{
+            ul{
+                display: flex;
+                gap: 50px;
+                flex-direction: column;
+                li {
+                    @include fluid(padding-left, 110px, 140px);
+                    position: relative;
+                    a{
+                        @include fluid(font-size, 15px, 17px);
+                        transition: .38s ease-in-out;
+                        &.active, &:hover{
+                            color: #A276FF; 
+                        }
+                        &.active{
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: -50%;
+                                width: 5px;
+                                height: 42px;
+                                background-color: #A276FF;
+                                border-radius: 0 15px 15px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-bottom{
+            @include fluid(padding-left, 110px, 140px);
+            @include fluid(margin-top, 30px, 230px);
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            a{
+                opacity: 0.7;
+                transition: .38s ease-in-out;
+                &:hover{
+                    color: #A276FF;
+                }
+            }
+            p{
+                margin-top: 30px;
+                opacity: .25;
+            }
+        }
+    }
+}
+
+.title{
+    @include fluid(font-size, 40px, 56px);
+    @include fluid(max-width, 300px, 800px);
+    line-height: 170%;
+    &--fs42{
+        @include fluid(font-size, 32px, 42px);
+        display: flex;
+        gap: 10px;
+        svg{
+            @include fluid(width, 23px, 37px);
+        }
+
+    }
+    span{
+        @include fluid(font-size, 80px, 120px);
+        color: #A276FF;
+    }
+}
+
+.content{
+    @include fluid(padding-top, 100px, 250px);
+    @include fluid(padding-bottom, 50px, 100px);
+    @include fluid(padding-left, 30px, 208px);
+    @include fluid(padding-right, 10px, 323px);
+    // padding-bottom: 102px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-between;
+    p{
+        @include fluid(font-size, 18px, 29px);
+        font-family: 'Roboto';
+        font-weight: 400;
+        line-height: 150%;
+        // margin-top: 30px;
+    }
+    &__btn{
+        @include fluid(width, 240px, 352px);
+        @include fluid(padding, 15px, 30px);
+        @include fluid(font-size, 18px, 20px);
+        display: block;
+        text-align: center;
+        border-radius: 17px;
+        border: 3px solid #FFF;
+        transition: .38s ease-in-out;
+        &:hover{
+            color: #A276FF;
+            border-color: #A276FF;
+        }
+    }
+    &__cards{
+        @include fluid(gap, 20px, 80px);
+        // margin-top: 100px;
+        display: flex;
+        img{
+            @include fluid(height, 100px, 156px);
+            width: 100%;
+            object-fit: contain;
+            border-radius: 11px;
+            transition: .42s ease-in-out;
+        }
+        a{
+            overflow: hidden;
+            &:hover{
+                img{
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+}
